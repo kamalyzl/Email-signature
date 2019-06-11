@@ -55,6 +55,16 @@
     </style>
   </head>
   <body>
+    <form>
+      <input placeholder="nombres" id="name" style="height: 20px" />
+      <input
+        placeholder="cod Pais (+56) + numero teléfono(999999999)"
+        id="phone"
+        style="height: 20px; width: 300px"
+      />
+      <button type="button" id="btn-submit" onclick="getData()">Enviar</button>
+    </form>
+
     <table
       style="padding: 0 20px;;height: 100px; width: 200px; background-image: url('https://github.com/kamalyzl/prueba-node-watson/raw/master/backgroundN.svg?sanitize=true'); background-size: contain; background-repeat: no-repeat; padding-left: 50px"
     >
@@ -63,13 +73,15 @@
         <td>
           <p
             style="font-family: 'Gotham-Bold', 'Helvetica'; color: #595959; font-size: 10px; margin: 0"
+            id="editName"
           >
             Sara Cárdenas Acevedo
           </p>
           <p
             style="color: #595959; font-family: 'Gotham-Book', 'Helvetica';font-size: 9px;"
+            id="editPhone"
           >
-            +569 49779570
+            +56 949779570
           </p>
           <p style=" font-size: 9px; font-family: 'Gotham-Book', 'Helvetica'">
             <a
@@ -83,5 +95,19 @@
         <td></td>
       </tr>
     </table>
+
+    <script>
+      function getData(e) {
+        const valueName = document.getElementById("name").value;
+        const valuePhone = document.getElementById("phone").value;
+        const phone = document.getElementById("editPhone");
+        const name = document.getElementById("editName");
+
+        phone.innerHTML = valuePhone;
+        name.innerHTML = valueName;
+        console.log(phone);
+        console.log(name);
+      }
+    </script>
   </body>
 </html>
